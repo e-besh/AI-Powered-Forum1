@@ -1,0 +1,21 @@
+import express from "express";
+import authRoutes from "./auth/routes/auth.routes.js";
+import questionRoutes from "./question/routes/question.routes.js";
+import answerRoutes from "./answer/routes/answer.routes.js";
+import ragRoutes from "./rag/routes/rag.routes.js";
+import supportRoutes from "./support/routes/support.routes.js";
+export const mainRouter = express.Router();
+
+// Authentication routes
+mainRouter.use("/auth", authRoutes);
+
+// Question routes
+mainRouter.use("/questions", questionRoutes);
+
+// Answer routes
+mainRouter.use("/answers", answerRoutes);
+
+// RAG (Knowledge Base) routes
+mainRouter.use("/rag/documents", ragRoutes);
+//support
+mainRouter.use("/support", supportRoutes);

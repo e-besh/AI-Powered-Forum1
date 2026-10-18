@@ -1,0 +1,30 @@
+.toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border, #e2e6eb);
+  background: var(--bg-elevated, #ffffff);
+  color: var(--text, #1a1d21);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    transform 0.1s;
+}
+
+.toggle:hover {
+  background: var(--bg-hover, #eef1f5);
+}
+
+.toggle:active {
+  transform: scale(0.94);
+}
+
+/* Fallback dark styling if variables aren't defined yet */
+:global([data-theme="dark"]) .toggle {
+  border-color: var(--border, #2a2f38);
+  background: var(--bg-elevated, #181b21);
+  color: var(--text, #e8eaed);
+}
